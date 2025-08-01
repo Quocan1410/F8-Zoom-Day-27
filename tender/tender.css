@@ -1,0 +1,260 @@
+/* tender.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 50%, #ff8a80 100%);
+    height: 100vh;
+    overflow: hidden;
+    /* YÊU CẦU 1: Tối ưu cho mobile */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* YÊU CẦU 1: Giao diện full viewport */
+.tender-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.app-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.app-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ff6b6b;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.app-subtitle {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.stats {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 107, 107, 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.card-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    position: relative;
+}
+
+.card-stack {
+    position: relative;
+    width: 350px;
+    height: 600px;
+    max-width: 90vw;
+    max-height: 70vh;
+}
+
+/* YÊU CẦU 3: Card styling */
+.tender-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    cursor: grab;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: none; /* No transition during drag */
+    /* YÊU CẦU: Tối ưu mobile */
+    touch-action: none;
+    user-select: none;
+}
+
+.tender-card:active {
+    cursor: grabbing;
+}
+
+.tender-card.animating {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-image {
+    height: 70%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+/* YÊU CẦU 4: Màu tone đỏ khi quẹt trái */
+.swipe-left .card-overlay {
+    background: linear-gradient(45deg, rgba(239, 68, 68, 0.85), rgba(220, 38, 38, 0.85));
+    color: white;
+}
+
+/* YÊU CẦU 4: Màu tone xanh khi quẹt phải */
+.swipe-right .card-overlay {
+    background: linear-gradient(45deg, rgba(34, 197, 94, 0.85), rgba(22, 163, 74, 0.85));
+    color: white;
+}
+
+.card-info {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1a202c;
+}
+
+.card-age {
+    color: #718096;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.card-bio {
+    color: #4a5568;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.action-buttons {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 4rem;
+    z-index: 100;
+}
+
+.action-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dislike-btn {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+
+.like-btn {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+}
+
+.action-btn:hover {
+    transform: scale(1.1);
+}
+
+.action-btn:active {
+    transform: scale(0.9);
+}
+
+.no-more-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    color: #666;
+    gap: 1.5rem;
+}
+
+.reset-btn {
+    padding: 1rem 2rem;
+    border: 2px solid #ff6b6b;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.reset-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+    .card-stack {
+        width: 320px;
+        height: 550px;
+    }
+
+    .action-buttons {
+        gap: 3rem;
+    }
+
+    .action-btn {
+        width: 55px;
+        height: 55px;
+    }
+}

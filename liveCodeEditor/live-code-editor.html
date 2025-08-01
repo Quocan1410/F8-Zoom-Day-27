@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Live Code Editor</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+            integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="live-code-editor.css" />
+    </head>
+    <body>
+        <div class="editor-container">
+            <!-- YÊU CẦU 3: Bên trái textarea -->
+            <div class="editor-panel">
+                <div class="panel-header">
+                    <i class="fas fa-code"></i>
+                    HTML/CSS/JS Code
+                </div>
+                <textarea class="code-textarea" id="codeInput" placeholder="Nhập HTML, CSS, JavaScript code của bạn vào đây...">
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Preview</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background: linear-gradient(135deg, #5D7B6F, #A4C3A2);
+            margin: 0;
+            padding: 40px;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        .button {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.5);
+            padding: 12px 24px;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        .button:hover {
+            background: rgba(255,255,255,0.9);
+            color: #5D7B6F;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Live Preview</h1>
+        <p>Chỉnh sửa code bên trái để xem kết quả ngay lập tức!</p>
+        <button class="button" onclick="this.textContent='Clicked! 🎉'">Click me!</button>
+    </div>
+</body>
+</html></textarea
+                >
+            </div>
+
+            <!-- YÊU CẦU 3: Bên phải iframe -->
+            <div class="editor-panel">
+                <div class="panel-header">
+                    <i class="fas fa-eye"></i>
+                    Live Preview
+                </div>
+                <iframe class="preview-iframe" id="previewFrame"></iframe>
+            </div>
+        </div>
+
+        <!-- YÊU CẦU 6: Custom Context Menu -->
+        <div class="context-menu" id="contextMenu">
+            <div class="context-menu-item" id="clearCode">
+                <i class="fas fa-trash"></i>
+                Xóa code
+            </div>
+            <div class="context-menu-item" id="copyCode">
+                <i class="fas fa-copy"></i>
+                Copy code
+            </div>
+            <div class="context-menu-item" id="saveCode">
+                <i class="fas fa-download"></i>
+                Tải xuống
+            </div>
+        </div>
+
+        <script src="live-code-editor.js"></script>
+    </body>
+</html>

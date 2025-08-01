@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <title>Tender - Dating App</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+            integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="tender.css" />
+    </head>
+    <body>
+        <div class="tender-container">
+            <div class="app-header">
+                <div class="app-title"><i class="fas fa-heart"></i> Tender</div>
+                <div class="app-subtitle">Vuốt để tìm tình yêu</div>
+                <div class="stats" id="stats"><i class="fas fa-heart"></i> 0 | <i class="fas fa-times"></i> 0</div>
+            </div>
+
+            <div class="card-area">
+                <div class="card-stack" id="cardStack">
+                    <!-- YÊU CẦU 3: Cards sẽ được render từ mảng players -->
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="action-btn dislike-btn" id="dislikeBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button class="action-btn like-btn" id="likeBtn">
+                    <i class="fas fa-heart"></i>
+                </button>
+            </div>
+        </div>
+
+        <script src="tender.js"></script>
+    </body>
+</html>

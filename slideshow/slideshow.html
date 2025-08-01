@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Slideshow with Custom Events</title>
+        <link rel="stylesheet" href="slideshow.css" />
+    </head>
+    <body>
+        <div class="slideshow-container">
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop" alt="Mountain Landscape" />
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=500&fit=crop" alt="Forest Path" />
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&sat=-100" alt="Ocean Waves" />
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=500&fit=crop" alt="Desert Sunset" />
+            </div>
+
+            <div class="slideshow-controls">
+                <button class="slide-btn" id="prevBtn">← Previous</button>
+                <button class="slide-btn" id="nextBtn">Next →</button>
+            </div>
+        </div>
+
+        <script src="slideshow.js"></script>
+    </body>
+</html>
